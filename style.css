@@ -1,0 +1,2175 @@
+/* =========================================================
+   01. 基础重置
+========================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+  color: #111827;
+  background: #ffffff;
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* =========================================================
+   02. 通用布局
+========================================================= */
+.container {
+  width: min(1280px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.section-alt {
+  background: #f9fafb;
+}
+
+section {
+  padding: 24px 0 88px;
+}
+
+/* =========================================================
+   03. 顶部导航栏
+========================================================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgb(255, 255, 255);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.nav {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Logo 区域
+   注意：如果你的 HTML 不是 .logo-text，而是 .brand-name
+   请把这里的类名统一掉 */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 52px;
+  width: auto;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.logo-main {
+  color: red;
+}
+
+.logo-sub {
+  color: #111;
+}
+
+/* 导航链接 */
+.nav-links {
+  display: flex;
+  gap: 28px;
+  color: #000000;
+  font-weight: 850;
+  font-size: 20px;
+}
+
+.nav-links a:hover {
+  color: #bc0000;
+}
+
+/* 顶部按钮 */
+.nav-cta {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   04. 按钮系统
+========================================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  font-weight: 800;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.03);
+}
+
+.btn-primary {
+  background: #dc2626;
+  color: #ffffff;
+  padding: 5px 12px;/* 改这里是电脑导航按钮大小 */
+  box-shadow: 0 10px 30px rgba(220, 38, 38, 0.18);
+}
+
+.btn-primary:hover {
+  background: #b91c1c;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #374151;
+  border: 2px solid #d1d5db;
+  padding: 12px 22px;
+}
+
+.btn-secondary:hover {
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+
+.btn-large {
+  padding: 16px 30px;
+  font-size: 1rem;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.btn-white {
+  background: #ffffff;
+  color: #dc2626;
+  padding: 16px 30px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16);
+}
+
+.btn-white:hover {
+  background: #f9fafb;
+}
+
+/* =========================================================
+   05. 标签 / Pills
+========================================================= */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 9999px;
+  background: #f8f8f8;
+  color: #dc2626;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.pill-red {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.pill-green {
+  background: #ecfdf5;
+  color: #15803d;
+}
+
+.pill-amber {
+  background: #fffbeb;
+  color: #b45309;
+}
+
+.pill-purple {
+  background: #faf5ff;
+  color: #7e22ce;
+}
+
+.pill-blue {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #dc2626;
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px rgba(220, 38, 38, 0.12);
+}
+
+/* =========================================================
+   06. 首屏 Hero
+========================================================= */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0 90px;
+  background: #ffffff;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+  min-height: calc(100vh - 64px);
+}
+
+.hero-text h1 {
+  margin-top: 24px;
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.hero-text h2 {
+  margin-top: 10px;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  color: #4b5563;
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.highlight {
+  color: #dc2626;
+}
+
+.hero-desc {
+  margin-top: 24px;
+  font-size: 1.08rem;
+  color: #4b5563;
+  max-width: 680px;
+}
+
+.thai-line {
+  margin-top: 10px;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.hero-actions {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.social-proof {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.avatars {
+  display: flex;
+}
+
+.avatars span {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #fee2e2, #fef3c7);
+  border: 2px solid #fff;
+  margin-left: -10px;
+}
+
+.avatars span:first-child {
+  margin-left: 0;
+}
+
+.proof-text {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  color: #4b5563;
+}
+
+.divider {
+  width: 1px;
+  height: 22px;
+  background: #d1d5db;
+}
+
+.hero-image-wrap {
+  display: block;
+}
+
+.hero-image-card,
+.image-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: visible;
+}
+
+.hero-image-card img,
+.image-card img,
+.wide-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  object-fit: cover;
+}
+
+.hero-image-card img {
+  min-height: 560px;
+  object-fit: cover;
+  box-shadow: 0 25px 60px rgba(17, 24, 39, 0.18);
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.22), transparent 45%);
+  pointer-events: none;
+}
+
+.floating-card {
+  position: absolute; /* 浮动定位 */
+   z-index: 9999;
+  background: rgba(255, 255, 255, 0.58); /* 磨砂透明背景 */
+  border: 1px solid #f3f4f6; /* 浅灰边框 */
+  border-radius: 18px; /* 圆角 */
+  padding: 16px 18px; /* 内边距 */
+  box-shadow: 0 18px 40px rgba(17, 24, 39, 0.14); /* 阴影 */
+  max-width: 220px; /* 最大宽度 */
+}
+
+.floating-card strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.98rem;
+}
+
+.floating-card p {
+  font-size: 0.9rem;
+  color: #6b7280;
+  line-height: 1.5;
+  
+}
+
+.floating-bottom-left {
+  left: 8px;
+  bottom: 20px;
+}
+
+.floating-top-right {
+  top: 12px;
+  right: 4px;
+}
+
+.hero-bg,
+.final-bg {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(56px);
+  pointer-events: none;
+}
+
+.hero-bg-1 {
+  width: 320px;
+  height: 320px;
+  right: -80px;
+  top: -40px;
+  background: rgba(254, 202, 202, 0.5);
+}
+
+.hero-bg-2 {
+  width: 240px;
+  height: 240px;
+  left: -60px;
+  bottom: 30px;
+  background: rgba(253, 230, 138, 0.35);
+}
+
+.hero-bg-3 {
+  width: 220px;
+  height: 220px;
+  right: 20%;
+  top: 10%;
+  background: rgba(254, 242, 242, 0.8);
+}
+
+/* =========================================================
+   07. 通用区块标题
+========================================================= */
+.section-heading {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 56px;
+}
+
+.section-heading .pill {
+  margin-bottom: 18px;
+}
+
+.section-heading h3 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.12;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.section-heading p {
+  margin-top: 16px;
+  color: #4b5563;
+  font-size: 1.02rem;
+}
+
+.top-line {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(220, 38, 38, 0.3),
+    rgba(245, 158, 11, 0.3),
+    rgba(220, 38, 38, 0.3)
+  );
+}
+
+/* =========================================================
+   08. 问题区 / 信息卡
+========================================================= */
+.card-grid.two-col {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.info-card {
+  background: #ffffff;
+  border: 1px solid #f3f4f6;
+  border-radius: 18px;
+  padding: 28px;
+  display: flex;
+  gap: 18px;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover,
+.book-card:hover,
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(17, 24, 39, 0.08);
+  border-color: #fecaca;
+}
+
+.icon-box {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: #fef2f2;
+  font-size: 1.4rem;
+}
+
+.icon-box.small {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  font-size: 1rem;
+}
+
+.info-card h4,
+.feature-item h4,
+.module-card h4,
+.book-card h4,
+.pricing-card h4 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.info-card p,
+.feature-item p,
+.book-body p,
+.testimonial-card p {
+  color: #4b5563;
+}
+
+.section-bottom-note {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #030406;
+}
+
+/* =========================================================
+   09. 左右分栏 / 课程区
+========================================================= */
+/* Split sections 课程卡片 */
+.split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.image-panel img {
+  box-shadow: 0 16px 40px rgba(17, 24, 39, 0.12);
+}
+
+.text-panel > .pill {
+  margin-bottom: 18px;
+}
+
+.text-panel h3 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.12;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.text-panel p {
+  color: #4b5563;
+  margin-bottom: 10px;
+}
+
+.feature-list {
+  margin-top: 28px;
+  display: grid;
+  gap: 20px;
+}
+
+.feature-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.floating-stat {
+  right: -36px;
+  bottom: -54px;
+  max-width: 230px;
+}
+
+.floating-stat strong {
+  color: #13824c;
+  font-size: 1.2rem;
+}
+
+
+
+/* Books 卡片项 */
+.book-grid,
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.book-card {
+  background: #ffffff;
+  border: 1px solid #f3f4f6;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.book-top {
+  padding: 28px 24px 20px;
+  text-align: center;
+  background: linear-gradient(180deg, #f9fafb, #f3f4f6);
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.book-emoji {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.level-badge {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 8px 12px;
+  border-radius: 9999px;
+  background: #ecfdf5;
+  color: #15803d;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.book-body {
+  padding: 24px;
+}
+
+.book-body p + p {
+  margin-top: 14px;
+}
+
+.老师评语 {
+  margin-top: 32px;
+  background: #fef2f2;
+  border-radius: 18px;
+  padding: 28px;
+  text-align: center;
+}
+/* 书名居中 */
+.book-card h4,
+.book-title {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 12px 0 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #111;
+}
+
+/* Testimonials */
+.testimonial-card {
+  background: #ffffff;
+  border: 1px solid #f3f4f6;
+  border-radius: 20px;
+  padding: 28px;
+  transition: all 0.3s ease;
+}
+
+.stars {
+  color: #f59e0b;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.success-badge {
+  display: inline-block;
+  background: #ecfdf5;
+  color: #15803d;
+  padding: 8px 12px;
+  border-radius: 9999px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.author {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #f3f4f6;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+/* 电脑版：老师区域 4:3 比例 */
+@media (min-width: 992px) {
+  .teacher-block:not(.reverse) .image-card {
+    width: 92%;          /* 这里改第一张图片大小 */
+    grid-template-columns: 4fr 3fr; 
+    position: relative;
+    border-radius: 24px; /* 圆角 */
+    overflow: hidden; /* 超出裁切 */
+    aspect-ratio: 1 / 1; /* 图片区域保持正方形 */
+  }
+
+  .teacher-block.reverse {
+    grid-template-columns: 4fr 3fr; /* 第二个老师左右反过来时，比例也反过来 */
+  }
+
+  .teacher-block .image-panel {
+    width: 92%;
+  }
+
+  .teacher-block .image-card {
+    position: relative;
+    border-radius: 24px; /* 圆角 */
+    overflow: hidden; /* 超出裁切 */
+    aspect-ratio: 1 / 1; /* 图片区域保持正方形 */
+  }
+
+  .teacher-block .image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 不变形，自动裁切 */
+    object-position: center center; /* 显示图片中间位置 */
+    display: block;
+  }
+
+  .teacher-block .text-panel {
+    padding: 10px 0;
+  }
+}
+
+/* 手机端自适应 */
+@media (max-width: 768px) {
+  .instructor-card img {
+    max-width: 100%;        /* 小屏幕下铺满 */
+  }
+}
+.floating-love {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -24px;
+  max-width: 280px;
+  text-align: center;
+}
+
+.credentials {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.credential {
+  background: #ffffff;
+  border: 1px solid #f3f4f6;
+  border-radius: 16px;
+  padding: 16px;
+  font-weight: 700;
+  color: #374151;
+}
+
+/* Pricing第一套 */
+.pricing-section {
+  position: relative;
+  background: linear-gradient(to bottom, rgba(202, 44, 44, 0.887), #ffffff 35%);
+}
+
+.pricing-card {
+  position: relative;
+  background: #ffffff;
+  border: 2px solid #fecaca;
+  border-radius: 26px;
+  padding: 34px;
+  box-shadow: 0 24px 60px rgba(220, 38, 38, 0.12);
+}
+
+.best-value {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #ea2704;
+  color: #ffffff;
+  padding: 12px 16px;
+  border-radius: 0 24px 0 18px;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.pricing-sub {
+  margin-top: 8px;
+  color: #6b7280;
+}
+
+.price {
+  margin: 24px 0 10px;
+}
+
+.old-price {
+  display: inline-block;
+  margin-right: 10px;
+  color: #9ca3af;
+  text-decoration: line-through;
+  font-size: 1.2rem;
+}
+.save-text {
+  color: #dc2626;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+/* Final CTA */
+.final-cta {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: #ffffff;
+  text-align: center;
+}
+
+.final-content {
+  position: relative;
+  z-index: 1;
+}
+
+.final-content h3 {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.final-content h3 span {
+  text-decoration: underline;
+  text-decoration-color: #fbbf24;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 4px;
+}
+
+.final-content p {
+  margin-top: 16px;
+  color: #fee2e2;
+  font-size: 1.05rem;
+}
+
+.final-content .thai-line {
+  color: #fecaca;
+  margin-bottom: 28px;
+}
+
+.final-trust {
+  margin-top: 26px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  color: #fecaca;
+  font-weight: 600;
+}
+
+.final-bg-1 {
+  width: 320px;
+  height: 320px;
+  left: -60px;
+  top: -80px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.final-bg-2 {
+  width: 260px;
+  height: 260px;
+  right: -50px;
+  bottom: -60px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Footer */
+.site-footer {
+  background: #111827;
+  color: #ffffff;
+}
+
+.footer-row {
+  padding: 34px 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-brand {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.footer-brand span {
+  color: #f87171;
+}
+
+.site-footer p {
+  color: #9ca3af;
+  margin-top: 8px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 22px;
+  color: #9ca3af;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #1f2937;
+  padding: 16px 0 24px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin-top: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .hero-image-wrap {
+    display: block;
+  }
+
+  .hero-image-card img {
+    min-height: 360px;
+  }
+}
+
+
+  .module-grid,
+  .card-grid.two-col,
+  .included-grid,
+  .credentials {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .split-grid {
+    gap: 42px;
+  }
+
+
+@media (max-width: 768px) {
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0 44px;
+    background:
+      linear-gradient(rgba(255,255,255,0.72), rgba(255,255,255,0.72)),
+      url("hero.jpg") center center / cover no-repeat;
+  }
+
+  .hero-image-wrap {
+    display: none;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    min-height: auto;
+    align-items: start;
+  }
+}
+@media (max-width: 520px) {
+  .container {
+    width: min(100% - 20px, 1280px);
+  }
+
+  .btn-large,
+  .btn-primary,
+  .btn-secondary,
+  .btn-white {
+    width: 100%;
+  }
+
+  .social-proof {
+    align-items: flex-start;
+  }
+
+  .proof-text {
+    gap: 10px;
+  }
+
+  .pricing-card,
+  .included-box,
+  .teacher-tip,
+  .testimonial-card,
+  .book-body,
+  .book-top,
+  .module-card,
+  .info-card {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .new-price {
+    font-size: 3rem;
+  }
+}
+/*MARKER*/
+.instructor-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.teacher-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.teacher-block + .teacher-block {
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.teacher-block.reverse .image-panel {
+  order: 2;
+}
+
+.teacher-block.reverse .text-panel {
+  order: 1;
+}
+
+.text-panel,
+.image-panel {
+  min-width: 0;
+}
+
+.text-panel h3 {
+  font-size: 2rem;
+  line-height: 1.3;
+  margin: 16px 0 20px;
+}
+
+.text-panel p {
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+.credentials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.credential {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+.instructor-card {
+  position: relative;
+}
+
+.floating-love {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  background: #ffffff;
+  padding: 12px 16px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  max-width: 80%;
+}
+
+ /* ========================================
+   💰 PRICING（三卡片版本）
+======================================== */
+
+/* ===== 布局 ===== */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 60px;
+}
+
+
+/* ===== 卡片 ===== */
+.pricing-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* hover效果 */
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  border-color: #e45151;
+}
+
+
+/* ===== 主推卡（中间） ===== */
+.pricing-card.highlight {
+  border: 2px solid #dc2626;
+  transform: scale(1.05);
+}
+
+/* 防止hover叠加太大 */
+.pricing-card.highlight:hover {
+  transform: scale(1.05) translateY(-6px);
+}
+
+
+/* ===== 标题 ===== */
+.pricing-card h4 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+/* 副标题 */
+.pricing-card .sub {
+  color: #6b7280;
+  margin-bottom: 14px;
+}
+
+/* 描述 */
+  .pricing-list {
+  text-align: center;
+  display: grid;
+  gap: 12px;
+  margin-bottom: 28px;
+
+  align-items: center;    /* 👈 关键：让左对齐的文字块在卡片内水平居中 */
+}
+
+/* ===== 💸 价格系统（重点） ===== */
+
+/* 整体价格区域 */
+.price-box {
+  margin-bottom: 10px;
+}
+
+/* 原价（划线） */
+.old-price {
+  font-size: 18px;
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
+/* 新价格（主视觉） */
+.new-price {
+  font-size: 36px;
+  font-weight: 800;
+  color: #dc2626;
+  line-height: 1;
+}
+
+/* 单位（฿ / /course） */
+.new-price span {
+  font-size: 16px;
+  color: #6b7280;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+/* 节省金额 */
+.save {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #dc2626;
+  font-weight: 700;
+}
+.pricing-list li::before {
+  content: "✓ ";
+  color: #0c7e21;
+  font-weight: 700;
+}
+
+
+/* ===== 📱 响应式 ===== */
+@media (max-width: 768px) {
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-card.highlight {
+    transform: none;
+  }
+
+  .pricing-card.highlight:hover {
+    transform: translateY(-6px);
+  }
+}
+.final-cta {
+  padding: 60px 0;
+}
+
+.final-content h3 {
+  font-size: clamp(2rem, 3vw, 2.8rem);
+}
+
+.final-content p {
+  margin-top: 10px;
+}
+
+.final-trust {
+  margin-top: 16px;
+}
+.pricing-section {
+  margin-bottom: 60px;
+}
+
+.final-cta {
+  margin-top: 40px;
+}.final-cta {
+  padding-bottom: 30px;
+}
+
+.site-footer {
+  margin-top: -10px;
+}
+.top-line {
+  margin-top: -16px;
+  margin-bottom: 12px;
+}
+
+section {
+  padding-top: 16px;
+}
+.teacher-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+
+.teacher-block .image-panel img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+/* ===== 支付二级界面 ===== */
+.payment-page {
+  min-height: 100vh;
+  padding: 96px 0;
+  background: linear-gradient(to bottom, #f9fafb, #ffffff);
+}
+
+.payment-box {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 120px;
+  box-shadow: 0 20px 50px rgba(17, 24, 39, 0.08);
+  text-align: center;
+  border: 1px solid #f3f4f6;
+}
+
+.payment-box .section-heading {
+  margin: 0 auto 40px;
+}
+
+.payment-box .section-heading p {
+  margin-top: 14px;
+  color: #6b7280;
+}
+
+.payment-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.payment-card {
+  display: block;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 28px;
+  text-align: left;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.payment-card:hover {
+  transform: translateY(-6px);
+  border-color: #fecaca;
+  box-shadow: 0 18px 40px rgba(17, 24, 39, 0.08);
+}
+
+.payment-icon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: #fef2f2;
+  font-size: 1.5rem;
+  margin-bottom: 14px;
+}
+
+.payment-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+  color: #111827;
+  font-weight: 800;
+}
+
+.payment-card p {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 48px;
+  color: #6b7280;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.back-link:hover {
+  color: #dc2626;
+}
+
+@media (max-width: 768px) {
+  .payment-page {
+    padding: 72px 0;
+  }
+
+  .payment-box {
+    padding: 32px 22px;
+  }
+
+  .payment-options {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-row {
+    gap: 24px;
+  }
+}
+/* ===== 支付三级界面 ===== */
+.payment-detail-card {
+  max-width: 560px;
+  margin: 30px auto;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+
+.payment-detail-card p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.qr-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.qr-box img {
+  width: 100%;
+  max-width: 540px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.payment-info {
+  text-align: left;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 24px;
+  color: #e60012;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+
+
+
+/* ======= 手机版专用覆盖样式 说明：把这整段直接放到全局 CSS 最底部 只影响手机，不影响电脑版 ======= */
+
+@media (max-width: 768px) { /* ===== 01. 全局收紧 ===== */ section { padding: 52px 0; }
+
+.container { width: min(100% - 20px, 1280px); }
+
+.section-heading { max-width: 100%; margin: 0 auto 32px; }
+
+.section-heading h3 { font-size: clamp(1.7rem, 6vw, 2.2rem); line-height: 1.15; }
+
+.section-heading p { font-size: 0.95rem; margin-top: 12px; }
+
+/* ===== 02. 顶部导航：只保留 logo + 3个导航 + 按钮 ===== */
+@media (max-width: 768px) {
+  .site-header .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    padding: 6px 0;
+    min-height: 52px;
+    flex-wrap: nowrap;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    white-space: nowrap;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .nav-links a {
+    font-size: 0.62rem;  
+    font-weight: 700;
+    white-space: nowrap;
+    line-height: 1;
+  }
+
+  .nav-cta {
+    flex-shrink: 0;
+    white-space: nowrap;
+    width: auto;
+    padding: 5px 12px;    /* 改这里是红色按钮长度 */
+    font-size: 0.54rem;
+    line-height: 1;
+    border-radius: 9999px;
+  }
+}
+/* ===== 03. Hero 首屏 ===== */ 
+.hero {
+  position: relative; /* 让内部定位正常 */
+  overflow: hidden; /* 隐藏溢出内容 */
+  min-height: 80vh; /* 首屏至少等于一屏高 */
+  padding: 20px 0 44px; /* 首屏上下留白 */
+  padding-bottom: 0; /* 去掉首屏底部空白 */
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.75), rgba(255,255,255,0.75)), /* 白色半透明遮罩，让字更清楚 */
+    url(images/hero2.jpg) center center / cover no-repeat; /* 首页背景图 */
+}
+@media (max-width: 768px) {
+  .hero-bg,
+  .hero-bg-1,
+  .hero-bg-2,
+  .hero-bg-3 {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .hero-text {
+    display: flex; /* 让内容可上下排列 */
+    flex-direction: column; /* 从上到下 */
+  }
+@media (max-width: 768px) {
+  .hero-actions {
+    display: flex; /* 两个按钮横排 */
+    justify-content: center; /* 整体居中 */
+    gap: 16px; /* 按钮间距 */
+    width: 100%; /* 占满整行 */
+  } /* 按钮外层 */
+
+  .hero-actions .btn {
+    flex: 1 1 0; /* 两个按钮平均分 */
+    max-width: 160px; /* 防止太宽 */
+    display: inline-flex; /* 按钮内部居中 */
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+    font-size: 1.2rem; /* 字体大小 */
+    font-weight: 700;
+    padding: 14px 95px; /* 内边距 */
+    border-radius: 9999px; /* 圆角 */
+    white-space: nowrap; /* 不换行 */
+  } /* 单个按钮 */
+}
+
+  .social-proof {
+    order: 2; /* 图标 + 2,500+ 排第二 */
+    margin-top: auto; /* 关键：把这一块推到底部 */
+    display: flex; /* 内部横向/纵向都行 */
+    flex-direction: column; /* 图标在上，文字在下 */
+    gap: 2px; /* 紧凑一点 */
+    padding-bottom: 4px; /* 离底部留一点点 */
+  }
+
+  .avatars {
+    order: 1; /* 图标在前 */
+  }
+
+  .proof-text {
+    order: 2; /* 2,500+ 在后 */
+  }
+}
+@media (max-width: 768px) {
+  .hero-desc {
+    margin-bottom: 0px; /* 增加正文后间距，推开下面的社交区 */
+  }
+}
+.hero-grid { grid-template-columns: 1fr; gap: 22px; min-height: auto; align-items: start; }
+
+.hero-image-wrap { display: none; }
+
+.hero-text h2 { margin-top: 10px; font-size: clamp(1.35rem, 5vw, 2rem); line-height: 1.15; }/* 首页文本间距大小 */
+
+.hero-desc { margin-top: 200px; font-size: 0.98rem; line-height: 1.65; }/* 首页文本间距大小 */
+
+.thai-line { font-size: 2.92rem; margin-top: 8px; }
+/* 首屏两个按钮：手机版并排 */ 
+.hero-actions { margin-top: 22px; display: flex; flex-direction: row; flex-wrap: nowrap; gap: 8px; align-items: center; }
+
+.social-proof { margin-top: 18px; gap: 12px; align-items: flex-start; }
+
+.avatars span { width: 34px; height: 34px; margin-left: -8px; }
+
+.proof-text { gap: 8px; font-size: 0.98rem; }
+
+.divider { height: 8px; }
+
+/* ===== 04. 问题区：手机版单排、收窄 ===== */ 
+.card-grid.two-col { grid-template-columns: 1fr; gap: 14px; max-width: 760px; margin: 0 auto; }
+
+.info-card { padding: 16px 14px; gap: 12px; align-items: flex-start; }
+
+.icon-box { width: 44px; height: 44px; flex: 0 0 44px; font-size: 1rem; line-height: 1; align-self: flex-start; margin-top: 0; }
+
+.info-content { min-width: 0; flex: 1; }
+
+.info-content h4 { margin: 0 0 6px 0; font-size: 1rem; line-height: 1.25; }
+
+.info-content p { margin: 0; font-size: 0.9rem; line-height: 1.65; color: #2157a4; }
+
+/* ===== 05. 课程/左右分栏区：手机版变单列 ===== */ 
+@media (max-width: 768px) {
+  .top-line {
+    height: 1px;              /* 线条粗细 */
+    margin-top: -51.5px;        /* 上下位置 */
+    margin-bottom: 0px;     /* 和内容的距离 */
+    background: #cb2451;     /* 纯红色 */
+  }
+}
+@media (max-width: 768px) {
+  .split-grid {
+    display: grid;              /* 单列布局 */
+    grid-template-columns: 1fr; /* 强制一列 */
+    gap: 20px;                  /* 间距 */
+    width: 100%;                /* 占满屏幕 */
+  } /* split-grid 手机版 */
+
+  .text-panel,
+  .image-panel {
+    width: 100%;                /* 占满一行 */
+    max-width: 100%;            /* 不超出 */
+  } /* 两栏都变全宽 */
+
+  .image-panel {
+    order: 1;                   /* 图片在上 */
+    position: relative;         /* 让浮动卡片以它为参照 */
+    overflow: hidden;           /* 裁掉超出部分 */
+  } /* 图片区 */
+
+  .text-panel {
+    order: 2;                   /* 文字在下 */
+  } /* 文字区 */
+
+  .floating-card {
+    position: absolute;         /* 浮动定位 */
+    z-index: 9999; /* 放最上层 */
+    background: rgba(255, 255, 255, 0.78); /* 磨砂背景 */
+    border: 1px solid #ffffff;  /* 边框 */
+    border-radius: 18px;        /* 圆角 */
+    padding: 13px 14px;        /* 内边距 */
+    box-shadow: 0 18px 40px rgba(17, 24, 39, 0.14); /* 阴影 */
+    max-width: calc(100vw - 24px); /* 不超屏幕 */
+    box-sizing: border-box;     /* 包含 padding */
+  } /* 93% 标签 */
+
+  .floating-card strong {
+    display: block;             /* 独占一行 */
+    margin-bottom: 4px;         /* 标题和正文间距 */
+    font-size: 0.98rem;         /* 标题大小 */
+  } /* 标题 */
+
+  .floating-card p {
+    margin: 0;                  /* 去掉默认外边距 */
+    font-size: 0.9rem;          /* 正文字号 */
+    color: #6b7280;             /* 文字颜色 */
+    line-height: 1.2;           /* 行高 */
+  } /* 正文 */
+
+  .floating-bottom-left {
+    left: 8px;                  /* 不要负值 */
+    bottom: 20px;               /* 距底部 */
+  } /* 左下角卡片 */
+
+  .floating-top-right {
+    right: 8px;                 /* 右边留一点 */
+    top: 10px;                  /* 顶部位置 */
+  } /* 右上角卡片 */
+}
+@media (max-width: 768px) {
+  .floating-stat {
+    z-index: 9999 !important; /* 手机版也强制最上层 */
+    right:-4px !important;          /* 不要超出右边 */
+    bottom:-4px !important;        /* 不要超出底部 */
+    left: auto !important;          /* 清掉左定位干扰 */
+    width: 130px !important;        /* 固定宽度，避免撑开 */
+    max-width: calc(100vw - 24px) !important; /* 不超过屏幕 */
+    box-sizing: border-box !important;        /* 宽度包含 padding */
+  }
+
+  .floating-card {
+    position: absolute;
+    padding: 3px 2px;             /* 缩小内边距 */
+    overflow: hidden;               /* 防止内容撑出 */
+     z-index: 9999;
+  }
+
+  .floating-card strong {
+    font-size: 0.68rem;             /* 标题小一点 */
+    margin-bottom: 1px;
+  }
+
+  .floating-card p {
+    font-size: 0.68rem;             /* 正文小一点 */
+    line-height: 1.25;
+    margin: 0;
+    word-break: break-word;         /* 强制换行 */
+  }
+
+  .image-panel {
+    position: relative;              /* 让绝对定位以它为参照 */
+    overflow: hidden;                /* 裁掉超出部分 */
+  }
+}
+/* ===== 06. 书本推荐区：手机版保持左右，但压缩图片和文字 ===== */ 
+@media (max-width: 768px) {
+  .book-grid {
+    grid-template-columns: 1fr; /* 手机版单列 */
+    gap: 18px; /* 卡片间距 */
+  }
+
+  .book-card {
+    display: grid; /* 用 grid 排版 */
+    grid-template-columns: 45% 55%; /* 左图 35%，右文 65% */
+    grid-template-rows: auto 1fr; /* 上标题，下正文 */
+    grid-template-areas:
+      "image title"
+      "image body"; /* 左侧图片跨两行 */
+    align-items: stretch; /* 拉满高度 */
+    min-height: 250px; /* 卡片高度 */
+    border-radius: 20px; /* 圆角 */
+    overflow: hidden; /* 防止溢出 */
+    position: relative; /* 作为内部定位基准 */
+    .book-card {
+  background: linear-gradient(
+    to right,
+    #ffffff 0%,
+    #ffffff 35%,
+    #f9fafb 100%
+  );
+}
+  }
+
+  .book-top {
+    grid-area: image; /* 放到左侧图片区 */
+    position: relative; /* 不再绝对定位 */
+    padding: 0; /* 去掉内边距 */
+    border: 0; /* 去掉边框 */
+    overflow: hidden; /* 图片裁切 */
+  }
+
+  .book-top img {
+  width: 100%; /* 图片占满图片区 */
+  height: 100%; /* 图片占满高度 */
+  object-fit: cover; /* 保持图片铺满 */
+  object-position: left center; /* 图片主体偏左 */
+  display: block; /* 去掉底部空隙 */
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,   /* 左边完全显示 */
+    rgba(0, 0, 0, 1) 90%,  /* 大部分保持完整 */
+    rgba(0, 0, 0, 0) 100%  /* 右边慢慢消失 */
+  );
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 90%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+  .book-top::after {
+    content: ""; /* 渐变层 */
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.02) 0%,
+      rgba(255, 255, 255, 0.10) 35%,
+      rgba(255, 255, 255, 0.78) 75%,
+      rgba(255, 255, 255, 0.95) 100%
+    );
+    z-index: 1;
+  }
+
+  .book-title {
+    grid-area: title; /* 放到右上标题区 */
+    position: relative; /* 不用 absolute */
+    z-index: 2;
+    margin: 0; /* 去掉默认间距 */
+    padding: 14px 14px 6px 14px; /* 右上留白 */
+    font-size: 0.98rem; /* 标题大小 */
+    font-weight: 800; /* 标题加粗 */
+    line-height: 1.2; /* 行高 */
+    text-align: left; /* 标题左对齐 */
+    align-self: end; /* 靠上方偏下，视觉更自然 */
+    color: #111827; /* 标题颜色 */
+  }
+
+  .book-body {
+    grid-area: body; /* 放到右侧正文区 */
+    margin-left: -25px; /* 轻微往左压一点 */
+    position: relative; /* 不用 absolute */
+    z-index: 2;
+    padding: 0 14px 14px 14px; /* 右下留白 */
+    display: flex; /* 文字上下排列 */
+    flex-direction: column;
+    justify-content: flex-start; /* 顶部开始 */
+    gap: 8px; /* 段落间距 */
+    background: transparent; /* 透明背景 */
+    text-align: left;
+  }
+
+  .book-body p {
+    margin: 0; /* 去掉默认段落间距 */
+    font-size: 0.78rem; /* 正文字号 */
+    line-height: 1.45; /* 行高 */
+    color: #4b5563; /* 文字颜色 */
+  }
+
+  .book-body p strong {
+    color: #111827; /* 强调文字更黑 */
+  }
+
+  .book-body p + p {
+    margin-top: 0; /* 不额外拉开 */
+  }
+}
+
+/* ===== 07. 评论区：手机版单列，不并排 ===== */ .testimonial-grid { grid-template-columns: 1fr; gap: 18px; }
+
+.testimonial-card { padding: 18px 16px; }
+
+.testimonial-card p { font-size: 0.92rem; line-height: 1.7; }
+
+.stars { font-size: 1rem; margin-bottom: 10px; }
+
+.success-badge { font-size: 0.8rem; padding: 6px 10px; margin-bottom: 12px; }
+
+.author { font-size: 0.85rem; margin-top: 14px; padding-top: 12px; }
+
+@media (max-width: 768px) {
+  /* =====================================================
+     教师模块：手机版加强版
+     目标：更像高级卡片，更接近你截图里的效果
+  ===================================================== */
+
+  .teacher-block {
+    display: grid;                 /* 单列布局 */
+    grid-template-columns: 1fr;    /* 一列 */
+    gap: 10px;                     /* 图片和文字的间距 */
+    align-items: start;            /* 顶部对齐 */
+    margin-bottom: 32px;           /* 每个老师卡片底部留白 */
+    padding: 16px 14px;            /* 整体内边距 */
+    border-radius: 22px;           /* 整体圆角 */
+    background: linear-gradient(180deg, #ffffff 0%, #fbfbfc 100%); /* 轻微渐变底色 */
+    border: 1px solid #d2d4d8;     /* 淡边框 */
+    box-shadow: 0 14px 30px rgba(17, 24, 39, 0.06); /* 柔和阴影 */
+    overflow: hidden;              /* 防止内容溢出圆角 */
+  }
+
+  /* 取消桌面端 reverse 顺序的影响 */
+  .teacher-block.reverse .image-panel,
+  .teacher-block.reverse .text-panel {
+    order: unset;                  /* 手机上不反转 */
+  }
+
+  /* =====================================================
+     图片区域
+  ===================================================== */
+  .image-panel {
+    position: relative;            /* 让浮层可定位 */
+    border-radius: 25px;           /* 图片圆角 */
+    overflow: hidden;              /* 裁掉超出部分 */
+  }
+
+  .instructor-card {
+    position: relative;            /* 给浮层标签一个定位基准 */
+    border-radius: 22px;           /* 圆角一致 */
+    overflow: hidden;              /* 图片不外溢 */
+    background: #ffffff;           /* 图片底色 */
+  }
+
+  .instructor-card img {
+    width: 100%;                   /* 图片占满宽度 */
+    height: auto;                  /* 保持比例 */
+    display: block;                /* 去掉底部空隙 */
+    object-fit: cover;             /* 图片更饱满 */
+    aspect-ratio: 4 / 5;           /* 统一人物图比例 */
+    border-radius: 22px;           /* 圆角一致 */
+    transform: scale(1.0);        /* 轻微放大，减少边缘空白感 */
+  }
+
+  /* 图片上叠一层轻微渐变，增加高级感 */
+  .instructor-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(17, 24, 39, 0.48) 0%,
+      rgba(17, 24, 39, 0.00) 45%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* 图片左下角浮层标签 */
+  .floating-love {
+    position: absolute;
+    left: 12px;                    /* 离左边留白 */
+    bottom: 12px;                  /* 离底部留白 */
+    z-index: 2;                    /* 在图片和渐变层上面 */
+    max-width: 88%;                /* 不要太宽 */
+    padding: 10px 12px;            /* 内边距 */
+    border-radius: 14px;           /* 圆角 */
+    background: rgba(255, 255, 255, 0.72); /* 半透明白 */
+    backdrop-filter: blur(10px);   /* 磨砂 */
+    -webkit-backdrop-filter: blur(10px); /* Safari 兼容 */
+    box-shadow: 0 10px 22px rgba(17, 24, 39, 0.12); /* 柔和阴影 */
+    font-size: 0.84rem;            /* 字号稍小 */
+    line-height: 1.4;              /* 行高 */
+    color: #111827;                /* 文字颜色 */
+  }
+
+  /* =====================================================
+     文字区域
+  ===================================================== */
+  .text-panel {
+    min-width: 0;                  /* 防止文字撑宽 */
+    text-align: left;              /* 左对齐 */
+  }
+
+  /* 小标签：身份 / 领域 */
+  .text-panel > .pill {
+    display: inline-flex;          /* 行内胶囊 */
+    align-items: center;
+    margin-bottom: 10px;           /* 和标题拉开 */
+    font-size: 0.74rem;            /* 更小一点更精致 */
+    padding: 7px 11px;             /* 标签内边距 */
+    border-radius: 9999px;         /* 胶囊形 */
+  }
+
+  /* 教师姓名 / 主标题 */
+  .text-panel h3 {
+    font-size: 1.45rem;            /* 标题大小 */
+    line-height: 1.18;             /* 行高 */
+    font-weight: 800;              /* 加粗 */
+    margin: 0 0 10px;              /* 下方留白 */
+    letter-spacing: -0.02em;       /* 更高级一点 */
+    color: #111827;                /* 深色标题 */
+  }
+
+  /* 简介文字 */
+  .text-panel p {
+    font-size: 0.92rem;            /* 正文字体 */
+    line-height: 1.72;             /* 舒服的行距 */
+    color: #4b5563;                /* 柔和正文色 */
+    margin: 0 0 10px;              /* 段落间距 */
+  }
+
+  /* =====================================================
+     资历标签 / 信息块
+  ===================================================== */
+  .credentials {
+    display: grid;                 /* 网格排版 */
+    grid-template-columns: 1fr 1fr; /* 两列 */
+    gap: 10px;                     /* 标签间距 */
+    margin-top: 14px;              /* 和正文分开 */
+  }
+
+  .credential {
+    background: #ffffff;           /* 白底 */
+    border: 1px solid #e5e7eb;     /* 浅边框 */
+    border-radius: 14px;           /* 圆角 */
+    padding: 12px 12px;            /* 内边距 */
+    font-size: 0.84rem;            /* 字体小一点 */
+    line-height: 1.35;             /* 行高 */
+    font-weight: 700;              /* 半粗 */
+    color: #374151;                /* 深灰文字 */
+    box-shadow: 0 8px 18px rgba(17, 24, 39, 0.04); /* 很轻的阴影 */
+  }
+
+  /* =====================================================
+     如果有多个教师卡片，卡片之间更像一个系列
+  ===================================================== */
+  .teacher-block + .teacher-block {
+    margin-top: 22px;              /* 两个卡片间距 */
+    padding-top: 22px;             /* 上方留白 */
+    border-top: 1px solid #f3f4f6; /* 轻分割线 */
+  }
+
+  /* 如果文字太长，限制最大宽度感受更稳 */
+  .text-panel h3,
+  .text-panel p {
+    max-width: 100%;               /* 防止过宽 */
+  }
+@media (max-width: 768px) {
+  /* ===== 价格区：手机版两列排列，保持和电脑版同一风格 ===== */
+  .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 两列 */
+    gap: 12px; /* 卡片间距 */
+    margin-top: 24px; /* 上方留白 */
+  }
+
+  /* ===== 单张价格卡 ===== */
+  .pricing-card {
+    position: relative; /* 让 BEST VALUE 标签能贴在卡片内 */
+    display: flex; /* 让内容上下排列 */
+    flex-direction: column; /* 纵向结构 */
+    justify-content: space-between; /* 内容分布更均匀 */
+    min-height: 100%; /* 两列高度更统一 */
+    padding: 18px 12px 16px; /* 卡片内边距 */
+    border: 1px solid #e5e7eb; /* 浅边框 */
+    border-radius: 22px; /* 圆角 */
+    background: #ffffff; /* 白底 */
+    box-shadow: 0 10px 24px rgba(17, 24, 39, 0.05); /* 轻阴影 */
+    text-align: center; /* 内容居中 */
+    overflow: hidden; /* 让角标和卡片圆角贴合 */
+  }
+  .pill-red2 {
+  position: absolute;   /* 脱离文档流 */
+  top: 0px;               /* 贴到顶部 */
+  left: 50%;            /* 水平居中 */
+  transform: translate(-50%, 10%); /* 🔥 Special Launch 标签往上抬一点，压在顶部 */
+  z-index: 3;           /* 放到最上层 */
+}
+
+  /* ===== 推荐卡：和电脑版一样的强调方式 ===== */
+  .pricing-card.highlight {
+    border: 1.5px solid #82410b; /* 橙红边框 */
+    background: linear-gradient(180deg, #fff7f0 0%, #ffffff 55%); /* 轻微暖色底 */
+    transform: none; /* 不放大，保持整齐 */
+  }
+
+  .pricing-card.highlight:hover {
+    transform: none; /* 手机版不做 hover 放大 */
+  }
+
+  /* ===== BEST VALUE 标签：贴在卡片右上角，融合感更强 ===== */
+  .best-value {
+    position: absolute; /* 贴在卡片内部 */
+    top: 0; /* 顶部 */
+    right: 0; /* 右上角 */
+    z-index: 2; /* 在卡片内容上方 */
+    padding: 7px 12px; /* 标签大小 */
+    border-radius: 0 0 0 14px; /* 只保留下左圆角，像卡片自带的一部分 */
+    background: #f80202; /* 标记色 */
+    color: #ffffff; /* 白字 */
+    font-size: 0.66rem; /* 小一点更精致 */
+    font-weight: 800; /* 加粗 */
+    letter-spacing: 0.04em; /* 字距 */
+    line-height: 1; /* 紧凑 */
+    box-shadow: 0 8px 18px rgba(255, 77, 31, 0.18); /* 轻阴影 */
+  }
+
+  /* ===== 推荐卡给标签留出空间，避免压住标题 ===== */
+  .pricing-card.highlight {
+    padding-top: 42px; /* 给顶部标签留位置 */
+  }
+
+  /* ===== 标题 ===== */
+  .pricing-card h4 {
+    font-size: 1rem; /* 标题稍小一点 */
+    line-height: 1.2; /* 行高 */
+    margin: 0 0 6px; /* 标题下间距 */
+    color: #111827; /* 标题颜色 */
+  }
+
+  /* ===== 副标题/说明文字 ===== */
+  .pricing-card .sub,
+  .pricing-card p {
+    font-size: 0.82rem; /* 说明文字 */
+    line-height: 1.45; /* 行高 */
+    color: #6b7280; /* 灰一点更高级 */
+    margin: 0 0 10px; /* 下方留白 */
+  }
+
+  /* ===== 价格区 ===== */
+  .new-price {
+    font-size: 1.95rem; /* 手机端价格大小 */
+    line-height: 1; /* 价格紧凑 */
+    font-weight: 800; /* 更突出 */
+    color: #dc2626; /* 与电脑版一致的红色 */
+  }
+
+  .old-price {
+    font-size: 0.78rem; /* 原价小一点 */
+    color: #9ca3af; /* 浅灰 */
+  }
+
+  .save {
+    font-size: 0.76rem; /* 节省文案 */
+    margin-top: 2px; /* 和价格拉开 */
+    color: #dc2626; /* 红色强调 */
+    font-weight: 700;
+  }
+
+  /* ===== 卖点列表 ===== */
+  .pricing-list {
+    text-align: left; /* 卖点左对齐更清晰 */
+    margin: 0px 0 5px; /* 上下间距 */
+    gap: 6px; /* 条目间距 */
+    font-size: 0.78rem; /* 小一点更整齐 */
+    line-height: 1.7; /* 行高 */
+  }
+
+  .pricing-list li {
+    margin: 0;
+  }
+
+  .pricing-list li::before {
+    content: "✓ "; /* 勾号 */
+    color: #15803d; /* 绿色 */
+    font-weight: 700;
+  }
+
+  /* ===== 按钮 ===== */
+  .pricing-card .btn {
+    width: 100%; /* 通栏按钮 */
+    padding: 10px 12px; /* 按钮高度 */
+    border-radius: 9999px; /* 圆角按钮 */
+    font-size: 0.9rem; /* 按钮字体 */
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 768px) {
+  /* ===== 最后行动区 CTA：缩小与上方价格区的距离 ===== */
+  .final-cta {
+    padding: 28px 0 22px;  /* 顶部留白缩小 */
+    margin-top: 0;         /* 去掉与上方的额外间距 */
+  }
+
+  .final-content h3 {
+    font-size: 1.6rem;     /* 标题稍微收一点 */
+    line-height: 1.15;
+    margin-top: 0;
+  }
+
+  .final-content p {
+    font-size: 0.94rem;
+    margin-top: 8px;
+  }
+
+  .final-trust {
+    margin-top: 10px;      /* 信誉区离正文近一点 */
+    gap: 10px;
+    font-size: 0.86rem;
+  }
+}
+
+/* ===== 11. 页脚 ===== */
+.footer-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+.footer-links { flex-wrap: wrap; gap: 14px; }
+.footer-links a { font-size: 0.94rem; }
+.footer-links a { font-weight: 00; }
+.footer-bottom { padding: 0px 0 0px; }
+
+/* ===== 12. 支付页 ===== */ 
+.payment-page { padding: 72px 0; }
+
+.payment-box { padding: 32px 22px; }
+
+.payment-options { grid-template-columns: 1fr; }
+
+.payment-card { padding: 22px; }
+
+.payment-card h3 { font-size: 1.1rem; }
+
+.payment-detail-card { padding: 24px 18px; }
+
+.qr-box img { width: 200px; height: 200px; } }
+
+/* ============= 更小手机：进一步压缩 ============= */ 
+@media (max-width: 520px)  {
+.container { width: min(100% - 5px, 1280px); }
+}
+.logo img { height: 54px; }/* 改这里是导航logo大小 */
+
+.nav-links { gap: 8px; }
+
+.nav-links a { font-size: 0.86rem; } /* 改这里是导航字体大小 */
+
+.nav-cta { padding: 10px 15px; font-size: 0.58rem; line-height: 1.1; }/* 这里是导航按钮大小 */
+
+.hero-text h1 { font-size: clamp(2.25rem, 8vw, 2.4rem); }/* 这里是标题字体大小 */
+
+.hero-text h2 { font-size: clamp(1.2rem, 5.5vw, 1.7rem); }
+
+.hero-desc { font-size: 1.2rem; }
+.pill { font-size: 0.8rem; line-height: 1.4;padding: 10px 16px; } 
+
+.section-heading h3 { font-size: clamp(1.55rem, 6vw, 2rem); }
+
+.info-card { padding: 15px 16px; }/* 这里是问题区域格式大小 */
+
+.icon-box { width: 40px; height: 40px; flex-basis: 40px; font-size: 0.95rem; }
+
+.info-content h4 { font-size: 0.95rem; }
+
+.info-content p { font-size: 0.86rem; }
+
+.book-top { flex-basis: 96px; padding: 12px 10px; }
+
+.book-body { padding: 14px 12px; }
+
+.book-title { font-size: 0.92rem; }
+
+.book-body p { font-size: 0.84rem; }
+
+.testimonial-card, .pricing-card { padding: 18px 14px; }
+
+.final-content h3 { font-size: 1.65rem; }
+
+.payment-box { padding: 26px 16px; } 
+.payment-card { padding: 18px; }
+.payment-card h3 { font-size: 1rem; }
