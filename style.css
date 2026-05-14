@@ -2021,7 +2021,7 @@ section {
 
   /* ===== 推荐卡给标签留出空间，避免压住标题 ===== */
   .pricing-card.highlight {
-    padding-top: 42px; /* 给顶部标签留位置 */
+    padding-top: 35px; /* 给顶部标签留位置 */
   }
 
   /* ===== 标题 ===== */
